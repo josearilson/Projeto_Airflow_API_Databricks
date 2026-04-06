@@ -1,8 +1,8 @@
 import os
 import pandas as pd
-from include.scripts.common.config import Config
-from include.scripts.common.funcoes_upload import enviar_arquivo_volume
+from include.scripts.common.config import Config 
 from include.scripts.common.funcoes_delta import registrar_tabela_parquet
+from include.scripts.common.funcoes_upload import enviar_arquivo_volume
 
 def processar_camada_bronze(entidade="clientes"):
     # 1. Definição de caminhos baseada na entidade
