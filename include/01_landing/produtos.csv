@@ -1,0 +1,40 @@
+id_produto,nome_produto,categoria,marca,preco_atual,data_criacao
+prd_001,Notebook Pro,Eletrônicos,Dell,1500.00,2016-01-10
+prd_002,Mouse Sem Fio,Acessórios,Logitech,45.90,2016-02-15
+prd_003,Teclado Mecânico,Acessórios,Razer,89.90,2016-02-20
+prd_004,Monitor 24pol,Eletrônicos,Samsung,120.00,2016-01-05
+prd_005,Cabo HDMI 2m,Cabos,Ugreen,25.00,2016-03-01
+prd_007,Mesa Escritório,Móveis,TokStok,210.00,2016-11-20
+prd_008,Fone Bluetooth,Áudio,JBL,55.00,2017-01-15
+prd_010,Carregador Rápido,Acessórios,Anker,75.00,2017-03-10
+prd_011,Webcam HD,Acessórios,Intelbras,45.00,2017-02-25
+prd_012,Suporte Monitor,Móveis,Elg,130.00,2017-01-20
+prd_014,Pendrive 64GB,Armazenamento,SanDisk,60.00,2017-03-05
+prd_015,SSD 480GB,Armazenamento,Kingston,110.00,2017-01-30
+prd_017,Mousepad Speed,Acessórios,SteelSeries,15.00,2017-03-12
+prd_018,Hub USB-C,Cabos,Baseus,95.00,2017-02-18
+prd_022,Filtro de Linha,Energia,iClamper,70.00,2017-02-22
+prd_024,Adaptador Bluetooth,Redes,Orico,50.00,2017-03-20
+prd_027,Película Vidro,Acessórios,Hprime,25.00,2017-03-25
+prd_029,Smartwatch S3,Wearables,Samsung,85.00,2017-02-14
+prd_051,Câmera DSL,Fotografia,Canon,150.00,2016-01-10
+prd_052,Tripé Pro,Acessórios,Manfrotto,45.90,2016-02-15
+prd_053,Lente 50mm,Fotografia,Nikon,89.90,2016-02-20
+prd_054,Mochila Fotógrafo,Acessórios,Lowepro,120.00,2016-01-05
+prd_055,Cartão SD 128GB,Armazenamento,Lexar,25.00,2016-03-01
+prd_056,Flash Externo,Fotografia,Godox,350.00,2016-12-10
+prd_057,Bastão de Luz,Iluminação,Nanlite,210.00,2016-11-20
+prd_058,Softbox,Iluminação,Greika,55.00,2017-01-15
+prd_059,Microfone Lapela,Áudio,Rode,900.00,2017-02-01
+prd_060,Bateria Extra,Energia,Sony,75.00,2017-03-10
+prd_061,Drone Mini,Eletrônicos,DJI,45.00,2017-02-25
+prd_062,Filtro ND,Acessórios,Hoya,130.00,2017-01-20
+prd_063,Estabilizador Celular,Acessórios,Zhiyun,200.00,2017-02-10
+prd_064,Carregador Duplo,Energia,GoPro,60.00,2017-03-05
+prd_065,Case Rígido,Acessórios,Pelican,110.00,2017-01-30
+prd_066,Workstation Z,Hardware,HP,2200.00,2016-10-15
+prd_067,Mouse Vertical,Acessórios,Logitech,15.00,2017-03-12
+prd_068,Extensor Wi-Fi,Redes,D-Link,95.00,2017-02-18
+prd_069,SSD NVMe 1TB,Armazenamento,WD,400.00,2017-01-12
+prd_070,Cooler Master,Hardware,MasterAir,35.00,2017-03-15
+prd_071,Monitor Curvo,Eletrônicos,LG,180.00,2017-01-25
