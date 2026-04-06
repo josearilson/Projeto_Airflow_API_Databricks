@@ -1,0 +1,47 @@
+id_cliente,nome_cliente,estado,pais,data_cadastro
+cus_001,José Arilson,SP,Brasil,2017-01-01
+cus_002,Rosa Erica,SP,Brasil,2017-02-15
+cus_003,Eli Maria,SP,Brasil,2017-03-20
+cus_004,Sra. João Silva,RJ,Brasil,2017-04-10
+cus_005,Maria Oliveira,MG,Brasil,2017-05-05
+cus_007,Ana Costa,SC,Brasil,2017-07-25
+cus_008,Pedro Santos,RS,Brasil,2017-08-12
+cus_010,Juliana Lima,Pe,Brasil,2017-10-18
+cus_012,Fernanda Alves,GO,Brasil,2017-12-05
+cus_013,Ricardo Mendes,DF,Brasil,2017-12-22
+cus_014,Dra. Camila Duarte,ES,Brasil,2018-01-01
+cus_016,Patrícia Gomes,mT,Brasil,2018-01-01
+cus_017,Gabriel Ramos,MS,Brasil,2018-01-01
+cus_018,Letícia Pires,PA,Brasil,2018-01-01
+cus_020,Beatriz Nogueira,PB,Brasil,2018-01-01
+cus_021,Dra. Thiago Barros,RN,Brasil,2018-01-01
+cus_022,Larissa Viana,AL,Brasil,2018-01-01
+cus_023,Felipe Cardoso,SE,Brasil,2018-01-01
+cus_024,Amanda Borges,TO,Brasil,2018-01-01
+cus_025,Dr. Gustavo Leal,PI,Brasil,2018-01-01
+cus_027,Samuel Pinto,AC,Brasil,2018-01-01
+cus_028,Dr. Renata Silveira,RR,Brasil,2018-01-01
+cus_029,Igor Moreira,AP,Brasil,2018-01-01
+cus_030,Vanessa Cunha,SP,Brasil,2018-01-01
+cus_031,Sra. Rafael Teixeira,RJ,Brasil,2018-01-01
+cus_032,Sônia Guimarães,MG,Brasil,2018-01-01
+cus_033,Hugo Cavalcanti,PR,Brasil,2018-01-01
+cus_034,Sr. Mônica Ribeiro,SC,Brasil,2018-01-01
+cus_036,Tânia Medina,BA,Brasil,2018-01-01
+cus_037,Fábio Lins,PE,Brasil,2018-01-01
+cus_038,Érica Farias,CE,Brasil,2018-01-01
+cus_039,Mário Josué,GO,Brasil,2018-01-01
+cus_040,Sueli Campos,DF,Brasil,2018-01-01
+cus_041,Sérgio Reis,ES,Brasil,2018-01-01
+cus_043,Leonardo Dicaprio,ssp,Brasil,2018-01-01
+cus_044,Cláudia Raia,ms,Brasil,2018-01-01
+cus_045,Antônio Fagundes,PA,Brasil,2018-01-01
+cus_046,Glória Pires,MA,Brasil,2018-01-01
+cus_047,Tony Ramos,PB,Brasil,2018-01-01
+cus_048,Fernanda Montenegro,RN,Brasil,2018-01-01
+cus_050,Regina Casé,SE,Brasil,2018-01-01
+cus_051,Carlos Alberto,SSP,Brasil,2017-01-01
+cus_052,Beatriz Souza,Rj,Brasil,2017-02-15
+cus_053,Marcos Paulo,MG,Brasil,2017-03-20
+cus_054,Eliana Rocha,PR,Brasil,2017-04-10
+cus_055,Sr. Roberto Carlos,SC,Brasil,2017-05-05
