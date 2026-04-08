@@ -1,7 +1,8 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from airflow.utils.task_group import TaskGroup
 from datetime import datetime
-from include.scripts.orquestrador_geral import iniciar_pipeline_medalhao
+from include.scripts.camadas.bronze import processar_csv, criar_tabela_bronze
 
 default_args = {
     'owner': 'engenharia_dados',
@@ -14,30 +15,49 @@ with DAG(
     dag_id='pipeline_ecommerce_medalhao',
     default_args=default_args,
     schedule_interval='@daily',
-    catchup=False, 
+    catchup=False,
     tags=['databricks', 'medalhao', 'bronze']
 ) as dag:
 
-    # Task 1: Clientes
-    task_processar_clientes = PythonOperator(
-        task_id='processar_clientes_bronze',
-        python_callable=iniciar_pipeline_medalhao,
-        op_kwargs={'entidade': 'clientes'} 
-    )
-    
-    # Task 2: Só inicia se Clientes terminar com sucesso
-    task_processar_produtos = PythonOperator(
-        task_id='processar_produtos_bronze',
-        python_callable=iniciar_pipeline_medalhao,
-        op_kwargs={'entidade': 'produtos'} 
-    )
-    
-    # Task 3: Só inicia se Produtos terminar com sucesso
-    task_processar_vendas = PythonOperator(
-        task_id='processar_vendas_bronze',
-        python_callable=iniciar_pipeline_medalhao,
-        op_kwargs={'entidade': 'vendas'} 
-    )
+    # ======= CLIENTES =======
+    with TaskGroup("dados_clientes", tooltip="Pipeline Clientes") as tg_clientes:
+        task_csv_clientes = PythonOperator(
+            task_id='processar_csv_clientes',
+            python_callable=processar_csv,
+            op_kwargs={'entidade': 'clientes'}
+        )
+        task_bronze_clientes = PythonOperator(
+            task_id='bronze_clientes',
+            python_callable=criar_tabela_bronze,
+            op_kwargs={'entidade': 'clientes'}
+        )
+        task_csv_clientes >> task_bronze_clientes
 
-    # Definição da Dependência (Pipeline Sequencial)
-    task_processar_clientes >> task_processar_produtos >> task_processar_vendas
+    # ======= PRODUTOS =======
+    with TaskGroup("dados_produtos", tooltip="Pipeline Produtos") as tg_produtos:
+        task_csv_produtos = PythonOperator(
+            task_id='processar_csv_produtos',
+            python_callable=processar_csv,
+            op_kwargs={'entidade': 'produtos'}
+        )
+        task_bronze_produtos = PythonOperator(
+            task_id='bronze_produtos',
+            python_callable=criar_tabela_bronze,
+            op_kwargs={'entidade': 'produtos'}
+        )
+        task_csv_produtos >> task_bronze_produtos
+
+    # ======= VENDAS =======
+    with TaskGroup("dados_vendas", tooltip="Pipeline Vendas") as tg_vendas:
+        task_csv_vendas = PythonOperator(
+            task_id='processar_csv_vendas',
+            python_callable=processar_csv,
+            op_kwargs={'entidade': 'vendas'}
+        )
+        task_bronze_vendas = PythonOperator(
+            task_id='bronze_vendas',
+            python_callable=criar_tabela_bronze,
+            op_kwargs={'entidade': 'vendas'}
+        )
+        task_csv_vendas >> task_bronze_vendas
+  
