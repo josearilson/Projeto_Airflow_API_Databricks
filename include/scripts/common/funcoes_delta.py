@@ -1,21 +1,16 @@
 from airflow.providers.databricks.hooks.databricks_sql import DatabricksSqlHook
 
-def registrar_tabela_parquet(conn_id, path_parquet, schema, tabela):
-    # 1. Primeiro criamos o objeto de conexão (o Hook)
+def registrar_tabela_bronze(conn_id, path_csv, schema, tabela, catalog):
     hook = DatabricksSqlHook(databricks_conn_id=conn_id)
+    tabela_full = f"{catalog}.{schema}.{tabela}"
     
-    # 2. Agora que o 'hook' existe, garantimos que o Schema existe
-    hook.run(f"CREATE SCHEMA IF NOT EXISTS workspace.{schema}")
-    
-    # 3. Definimos o nome completo da tabela
-    tabela_full = f"workspace.{schema}.{tabela}"
-     
-    # 4. Preparamos o SQL com aspas triplas
     sql = f"""
-        CREATE OR REPLACE TABLE {tabela_full}
-        USING DELTA
-        AS SELECT * FROM parquet.`{path_parquet}`;
+    CREATE TABLE IF NOT EXISTS {tabela_full} USING DELTA;
+
+    COPY INTO {tabela_full}
+    FROM '{path_csv}'
+    FILEFORMAT = CSV
+    FORMAT_OPTIONS ('header' = 'true', 'inferSchema' = 'true', 'delimiter' = ',')
+    COPY_OPTIONS ('mergeSchema' = 'true', 'force' = 'true');
     """
-    
-    # 5. Executamos a criação da tabela
     hook.run(sql)
