@@ -1,0 +1,11 @@
+Remover todos os containers:
+docker rm -f $(docker ps -aq)
+
+Remover todas as imagens:
+docker rmi -f $(docker images -q)
+
+Remover todos os volumes:
+docker volume rm $(docker volume ls -q)
+
+Remover todas as redes personalizadas:
+docker network prune
